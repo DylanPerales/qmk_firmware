@@ -74,12 +74,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
                     tap_code_delay(KC_UP, 50);
                     tap_code_delay(KC_LEFT, 50);
                     tap_code_delay(KC_RGHT, 50);
+                    return false;
                 }
             }
-            else {
-                return true;
-            }
-            return false;
+            return true;
         case BL_STEP:
             if (get_mods() == MOD_BIT(KC_LCTL)) {
                 if (record->event.pressed) {
@@ -90,27 +88,23 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
                     tap_code_delay(KC_RGHT, 50);
                     tap_code_delay(KC_LEFT, 50);
                     tap_code_delay(KC_RGHT, 50);
+                    return false;
                 }
             }
-            else {
-                return true;
-            }
-            return false;
+            return true;
         case KC_CRCL:
             if (get_mods() == MOD_BIT(KC_LCTL)) {
                 if (record->event.pressed) {
                     // ROCKET SENTRY (CIRCLE BUTTON)
                     tap_code_delay(KC_DOWN, 50);
                     tap_code_delay(KC_UP, 50);
-                    tap_code_delay(KC_RGHT, 50);
+                    tap_code_delay(KC_RGHT, 200);
                     tap_code_delay(KC_RGHT, 50);
                     tap_code_delay(KC_LEFT, 50);
+                    return false;
                 }
             }
-            else {
-                return true;
-            }
-            return false;
+            return true;
         case KC_TRI:
             if (get_mods() == MOD_BIT(KC_LCTL)) {
                 if (record->event.pressed) {
@@ -121,43 +115,38 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
                     tap_code_delay(KC_UP, 50);
                     tap_code_delay(KC_LEFT, 50);
                     tap_code_delay(KC_UP, 50);
+                    return false;
                 }
             }
-            else {
-                return true;
-            }
-            return false;
+            return true;
         case KC_SQR:
             if (get_mods() == MOD_BIT(KC_LCTL)) {
                 if (record->event.pressed) {
-                    // PATRIOT EXOSUIT (SQUARE BUTTON) TO BE COMPLETED
+                    // PATRIOT EXOSUIT (SQUARE BUTTON)
+                    tap_code_delay(KC_LEFT, 50);
                     tap_code_delay(KC_DOWN, 50);
-                    tap_code_delay(KC_UP, 50);
                     tap_code_delay(KC_RGHT, 50);
                     tap_code_delay(KC_UP, 50);
                     tap_code_delay(KC_LEFT, 50);
-                    tap_code_delay(KC_UP, 50);
+                    tap_code_delay(KC_DOWN, 200);
+                    tap_code_delay(KC_DOWN, 50);
+                    return false;
                 }
             }
-            else {
-                return true;
-            }
-            return false;
+            return true;
         case KC_XXX:
             if (get_mods() == MOD_BIT(KC_LCTL)) {
                 if (record->event.pressed) {
                     // 500KG BOMB (x BUTTON)
                     tap_code_delay(KC_UP, 50);
                     tap_code_delay(KC_RGHT, 50);
-                    tap_code_delay(KC_DOWN, 50);
-                    tap_code_delay(KC_DOWN, 50);
-                    tap_code_delay(KC_DOWN, 50);
+                    tap_code_delay(KC_DOWN, 200);
+                    tap_code_delay(KC_DOWN, 200);
+                    tap_code_delay(KC_DOWN, 200);
+                    return false;
                 }
             }
-            else {
-                return true;
-            }
-            return false;
+            return true;
     }
     return true;
 }
